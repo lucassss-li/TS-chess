@@ -1,3 +1,5 @@
+import { Expect } from '../utils/Expect'
+import { Equal } from '../utils/Equal'
 namespace MyExclude {
     type MyExclude<T, U> = T extends U ? never : T
     type cases = [

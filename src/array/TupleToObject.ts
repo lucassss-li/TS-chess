@@ -1,3 +1,5 @@
+import { Expect } from '../utils/Expect'
+import { Equal } from '../utils/Equal'
 namespace TupleToObject {
     type TupleToObject<T extends readonly any[]> = {
         [K in T[number]]: K

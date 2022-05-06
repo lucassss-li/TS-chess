@@ -1,3 +1,5 @@
+import { Expect } from '../utils/Expect'
+import { Equal } from '../utils/Equal'
 namespace MyReadonly {
     type MyReadonly<T> = { readonly [K in keyof T]: T[K] }
 
