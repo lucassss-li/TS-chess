@@ -1,7 +1,9 @@
 namespace MyReadonly {
     type MyReadonly<T> = { readonly [K in keyof T]: T[K] }
 
-    interface Todo {
+    type cases = [Expect<Equal<MyReadonly<Todo1>, Readonly<Todo1>>>]
+
+    interface Todo1 {
         title: string
         description: string
         completed: boolean
@@ -9,6 +11,4 @@ namespace MyReadonly {
             author: string
         }
     }
-
-    type a = Equal<MyReadonly<Todo>, Readonly<Todo>>
 }

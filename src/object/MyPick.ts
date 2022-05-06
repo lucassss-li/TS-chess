@@ -5,13 +5,24 @@ namespace MyPick {
     //     [P in K]: T[P]
     //   }
 
+    type cases = [
+        Expect<Equal<Expected1, MyPick<Todo, 'title'>>>,
+        Expect<Equal<Expected2, MyPick<Todo, 'title' | 'completed'>>>,
+        MyPick<Todo, 'title' | 'completed' | 'invalid'>
+    ]
+
     interface Todo {
         title: string
         description: string
         completed: boolean
     }
 
-    type a = MyPick<Todo, 'title'>
-    type b = MyPick<Todo, 'title' | 'completed'>
-    type c = MyPick<Todo, 'title' | 'completed' | 'invalid'>
+    interface Expected1 {
+        title: string
+    }
+
+    interface Expected2 {
+        title: string
+        completed: boolean
+    }
 }
