@@ -4,3 +4,5 @@ TupleToUnion
 PromiseAll
 Permutation
 AppendToObject
+PartialByKeys
+MinusOne
