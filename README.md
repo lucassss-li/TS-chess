@@ -3,3 +3,4 @@ TupleToObject
 TupleToUnion
 PromiseAll
 Permutation
+AppendToObject

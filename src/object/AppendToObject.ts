@@ -5,6 +5,8 @@ namespace AppendToObject {
         [K in U | keyof T]: K extends keyof T ? T[K] : V
     }
 
+    type AppendToObject1<T, U extends string, V> = T & { [K in U]: V }
+
     type test1 = {
         key: 'cat'
         value: 'green'
