@@ -10,6 +10,14 @@ namespace Chainable {
         get(): R
     }
 
+    type Chainable1<T = {}> = {
+        option<A extends string, B>(
+            key: A,
+            value: B
+        ): Chainable<{ [K in A | keyof T]: K extends keyof T ? T[K] : B }>
+        get(): T
+    }
+
     declare const a: Chainable
 
     const result1 = a
