@@ -5,6 +5,12 @@ namespace MyReadonly2 {
         readonly [Y in keyof T as Y extends K ? Y : never]: T[Y]
     } & { [Y in keyof T as Y extends K ? never : Y]: T[Y] }
 
+    type MyReadonly3<T, K = never> = [K] extends [never]
+        ? { readonly [A in keyof T]: T[A] }
+        : { [A in keyof T as A extends K ? never : A]: T[A] } & {
+              readonly [A in keyof T as A extends K ? A : never]: T[A]
+          }
+
     type cases = [
         Expect<Alike<MyReadonly2<Todo1>, Readonly<Todo1>>>,
         Expect<Alike<MyReadonly2<Todo1, 'title' | 'description'>, Expected>>,
